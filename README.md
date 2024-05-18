@@ -25,3 +25,24 @@ La clase Phone interactúa con el mediador para manejar las llamadas telefónica
 
 La clase Config se encarga de inicializar el sistema y demostrar su funcionamiento.
 La clase Main se encarga de iniciar la configuración y demostrar el sistema.
+
+## Patrón Decorator
+
+El patrón de diseño Decorator permite agregar comportamiento a un objeto de manera dinámica. Este patrón es útil cuando se desea extender la funcionalidad de las clases de manera flexible y sin modificar su código.
+
+En este ejemplo, tenemos una interfaz DataBase que define las operaciones básicas de una base de datos y una implementación concreta de esta interfaz llamada DataBaseMemory. También tenemos una clase Logger que se encarga de registrar mensajes.
+
+Luego, creamos una clase LoggerDecorator que implementa la interfaz DataBase y actúa como un decorador para añadir funcionalidad de logging a cualquier implementación de DataBase sin modificar su código.
+
+Para verificar el correcto funcionamiento del LoggerDecorator, se implementa una prueba unitaria que realiza las siguientes acciones:
+
+Inserta un registro en la base de datos a través del decorador.
+Verifica que el registro ha sido añadido a la base de datos.
+Verifica que el registro de la operación ha sido añadido al logger.
+Obtiene los registros de la base de datos a través del decorador y verifica que se registra esta operación.
+
+Para ver cómo se usan estas clases en un programa principal, puedes configurar el entorno en una clase Config y luego utilizarla en la clase Main.
+
+Salida de consola:
+> Registros en la base de datos: [Registro1, Registro2]
+> Logs: [inserta Registro1, inserta Registro2, lectura]
