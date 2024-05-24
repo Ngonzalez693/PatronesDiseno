@@ -67,3 +67,31 @@ Salida de consola:
 > Current State: Stop buying
 > Current State: Locked...
 > Current State: Locked...
+
+## Patrón Strategy
+
+El patrón de diseño Strategy permite que una clase cambie su comportamiento en tiempo de ejecución mediante la composición con diferentes estrategias que implementan un comportamiento específico. Este patrón es útil cuando se desea que una clase tenga una familia de algoritmos y seleccione uno de ellos para su uso.
+
+El patrón Strategy se utiliza para manejar los diferentes métodos de pago. El usuario puede elegir entre PayPal y tarjeta de crédito, y la aplicación utilizará la estrategia correspondiente para procesar el pago.
+
+En PayStrategy.java, definimos una interfaz común para todas las estrategias de pago.
+PayByPayPal.java: Implementa el método de pago con PayPal.
+PayByCreditCard.java: Implementa el método de pago con tarjeta de crédito.
+En Order.java, la clase Order utiliza la interfaz PayStrategy para delegar la recolección de datos de pago y el proceso de pago.
+La clase Main.java actúa como el cliente que selecciona productos, elige el método de pago y procesa el pedido.
+
+> Please select a product:
+> 1 - Mother board
+> 2 - CPU
+> 3 - HDD
+> 4 - Memory
+> Count: 2
+> Do you wish to continue selecting products? Y/N: N
+> Please select a payment method:
+> 1 - PayPal
+> 2 - Credit Card
+> Enter the user's email: user@example.com
+> Enter the password: ********
+> Pay 4400 units or Continue shopping? P/C: P
+> Paying 4400 using PayPal.
+> Payment has been successful.
