@@ -46,3 +46,24 @@ Para ver cómo se usan estas clases en un programa principal, puedes configurar 
 Salida de consola:
 > Registros en la base de datos: [Registro1, Registro2]
 > Logs: [inserta Registro1, inserta Registro2, lectura]
+
+## Patrón State
+
+El patrón de diseño State permite a un objeto cambiar su comportamiento cuando cambia su estado interno. Este patrón es útil cuando un objeto necesita alterar su comportamiento en tiempo de ejecución dependiendo de su estado, y evita el uso de grandes estructuras condicionales (como if-else o switch).
+
+En este ejemplo, se modela el estado de una tarjeta de crédito con los siguientes estados: ActiveState, DisableState, LockState y BuyingState. La clase User actúa como el contexto que maneja el estado actual de la tarjeta y delega el comportamiento a la instancia de estado correspondiente.
+
+La clase State es abstracta y define los métodos que cada estado concreto debe implementar.
+La clase ActiveState representa el estado en el que la tarjeta está activa y permite compras.
+La clase DisableState representa el estado en el que la tarjeta está desactivada.
+La clase LockState representa el estado en el que la tarjeta está bloqueada.
+La clase BuyingState representa el estado en el que la tarjeta está realizando una compra.
+La clase User actúa como el contexto que maneja el estado actual de la tarjeta y delega las solicitudes a la instancia de estado correspondiente.
+La clase Main demuestra el uso del patrón State cambiando el estado de la tarjeta de crédito del usuario y mostrando las transiciones en la consola.
+
+Salida de consola:
+> State: Actived ...
+> Current State: buying
+> Current State: Stop buying
+> Current State: Locked...
+> Current State: Locked...
